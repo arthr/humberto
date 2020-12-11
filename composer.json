@@ -1,0 +1,14 @@
+{
+    "name": "humberto/basic",
+    "description": "Estrutura B\u0000sica de Projetos PHP",
+    "require": {
+        "klein/klein": "^2.1",
+        "monolog/monolog": "^2.1",
+        "illuminate/database": "^8.18"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    }
+}
