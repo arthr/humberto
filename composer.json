@@ -5,7 +5,9 @@
         "klein/klein": "^2.1",
         "monolog/monolog": "^2.1",
         "illuminate/database": "^8.18",
-        "hassankhan/config": "^2.2"
+        "hassankhan/config": "^2.2",
+        "vlucas/phpdotenv": "^5.2",
+        "phpoption/phpoption": "^1.7"
     },
     "autoload": {
         "psr-4": {
