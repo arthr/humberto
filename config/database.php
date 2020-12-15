@@ -3,13 +3,13 @@ return [
     'connections' => [
         'default' => [
             'driver'    => 'mysql',
-            'host'      => '192.168.2.217',
-            'database'  => 'projetinho',
-            'username'  => 'root',
-            'password'  => '1234',
-            'charset'   => 'utf8',
-            'collation' => 'utf8_unicode_ci',
-            'prefix'    => '',
+            'host'      => env('DB_HOST'),
+            'database'  => env('DB_DATABASE'),
+            'username'  => env('DB_USERNAME', 'root'),
+            'password'  => env('DB_PASSWORD'),
+            'charset'   => env('DB_CHARSET', 'utf8'),
+            'collation' => env('DB_COLLATION', 'utf8_unicode_ci'),
+            'prefix'    => env('DB_PREFIX'),
         ],
         'lbc' => [
             'driver'    => 'mysql',
