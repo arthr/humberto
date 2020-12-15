@@ -4,7 +4,8 @@
     "require": {
         "klein/klein": "^2.1",
         "monolog/monolog": "^2.1",
-        "illuminate/database": "^8.18"
+        "illuminate/database": "^8.18",
+        "hassankhan/config": "^2.2"
     },
     "autoload": {
         "psr-4": {
