@@ -6,19 +6,16 @@ use Klein\Klein as Router;
 $router = new Router();
 
 $router->respond('GET', '/', function () {
-    $ctr = new IndexController();
-    return $ctr->index();
+    return (new IndexController)->index();
 });
 
 $router->respond('GET', '/usuario/[:id]?', function ($request, $response) {
-    $ctr = new IndexController();
-    return $response->json($ctr->usuario($request->id));
+    return $response->json((new IndexController)->usuario($request->id));
 });
 
 /** Tratamento de Erros */
 $router->onHttpError(function ($code, $route) {
     $request = $route->request();
-
     switch ($code) {
         case 404 || 405:
             $body = <<<HTML
@@ -38,3 +35,4 @@ $router->onHttpError(function ($code, $route) {
 });
 
 $router->dispatch();
+unset($router);
