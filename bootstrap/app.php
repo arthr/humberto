@@ -6,17 +6,17 @@ define('ROOT', __DIR__ . '/../');
 /** Autoloader */
 require_once ROOT . 'vendor/autoload.php';
 
-/** Dependências */
 use Noodlehaus\Config;
 use Illuminate\Database\Capsule\Manager as Capsule;
 
 /** Tratamento de Erros */
 \App\Handler\ErrorHandler::initHandler();
 
-/** Configurações */
-$dotenv = Dotenv\Dotenv::createImmutable(ROOT);
+/** Configurações Globais */
+$dotenv = \Dotenv\Dotenv::createImmutable(ROOT);
 $dotenv->load();
 
+/** Configurações Database */
 $dbconfig = new Config(ROOT . 'config/database.php');
 $connections = $dbconfig->get('connections');
 
