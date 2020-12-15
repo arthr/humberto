@@ -8,3 +8,6 @@ Executar o comando "composer install" para instalar as dependências do projeto.
 
 ### Observações básicas
 Lembre-se de preparar um banco de dados e configurar o mesmo no arquivo "bootstrap".
+
+## Projeto Final
+A ideia inicial é elaborar um sistema de "Lista de Tarefas" com nível de acesso de usuários aplicado.
