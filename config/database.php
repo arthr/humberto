@@ -13,9 +13,8 @@ return [
         ],
         'lbc' => [
             'driver'    => 'mysql',
-            'host'      => 'mysql642.umbler.com',
-            'port'      => '41890',
-            'database'  => 'lbc',
+            'host'      => 'mysql642.umbler.com:41890',
+            'database'  => 'lineagebc',
             'username'  => 'lbc',
             'password'  => 'LBC55465213',
             'charset'   => 'latin1',

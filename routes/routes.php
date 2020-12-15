@@ -10,9 +10,9 @@ $router->respond('GET', '/', function () {
     return $ctr->index();
 });
 
-$router->respond('GET', '/inventario/[:id]?', function ($request, $response) {
+$router->respond('GET', '/usuario/[:id]?', function ($request, $response) {
     $ctr = new IndexController();
-    return $ctr->inventario($request->id);
+    return $response->json($ctr->usuario($request->id));
 });
 
 /** Tratamento de Erros */
