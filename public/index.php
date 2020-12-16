@@ -9,11 +9,12 @@
  * Definições Globais
  * ---------------------------
  * Variáveis Globais para simplificar nossa vida em uma necessidade
- * futura. Definições como diretório raíz, startup da aplicação,
- * timezone, fuso, idioma, entre outras definições globais.
+ * futura. Definições como diretório raíz, startup time da aplicação,
+ * entre outras definições globais.
  */
 define('ROOT', __DIR__ . '/../');
 define('APP_START', microtime(true));
+define('APP_LOCALE', 'pt-BR');
 
 /**
  * Registrando o Autoloader
@@ -35,6 +36,12 @@ require_once ROOT . 'vendor/autoload.php';
  * local e importando tudo no script aqui. 
  */
 require_once ROOT . 'bootstrap/app.php';
+
+/**
+ * Helpers
+ * -------
+ */
+require_once ROOT . 'bootstrap/helpers.php';
 
 /**
  * Roteador

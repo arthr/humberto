@@ -8,7 +8,9 @@ class IndexController
 {
     public function index()
     {
-        return env('APP_NAME');
+        return view('welcome', [
+            'executionTime' => number_format((microtime(true) - APP_START), 5)
+        ]);
     }
 
     public function usuario($id)
