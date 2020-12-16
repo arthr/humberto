@@ -64,6 +64,10 @@
         .m-b-md {
             margin-bottom: 30px;
         }
+
+        .execution-time>p {
+            font-size: 12pt;
+        }
     </style>
 </head>
 
@@ -85,6 +89,15 @@
 
             <div class="execution-time">
                 <p>executado em <b>{{ $executionTime }}</b> segundos</p>
+                @if($production)
+                <p>
+                    <font style="color: red; font-weight: bold;">Production</font>
+                </p>
+                @else
+                <p>
+                    <font style="color: blue; font-weight: bold;">Development</font>
+                </p>
+                @endif
             </div>
         </div>
     </div>
