@@ -11,7 +11,13 @@ use Illuminate\View\Factory;
 use Illuminate\View\FileViewFinder;
 
 if (!function_exists('view')) {
-    // Configuração Blade View Engine
+    /**
+     * Configuração Blade View Engine
+     * ------------------------------
+     * Documentação Blade -> https://laravel.com/docs/8.x/blade
+     * Nem todos os recursos são funcionais nessa estrutura de projeto modelo.
+     */
+
     // Podem ser definidos vários diretórios onde estarão localizados os templates
     $templatePath = [ROOT . 'resources/views'];
     $cachePath = ROOT . 'storage/framework/cache/data';
