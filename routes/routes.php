@@ -10,19 +10,18 @@ $router->respond('GET', '/', function () {
     return (new IndexController)->index();
 });
 
+/** Autenticação */
 $router->with('/auth', function () use ($router) {
     $router->respond('GET', '/login', function () {
-        (new LoginController)->showLoginForm();
+        return (new LoginController)->showLoginForm();
     });
-    $router->responde('POST', '/')
+    $router->respond('POST', '/login', function ($request, $response) {
+        return (new LoginController)->login($request);
+    });
+    $router->respond('GET', '/logout', function () {
+        return (new LoginController)->logout();
+    });
 });
-
-$router->respond('GET', '/usuario/[:id]?', function ($request, $response) {
-    return $response->json((new IndexController)->usuario($request->id));
-});
-
-
-
 
 /** Tratamento de Erros */
 $router->onHttpError(function ($code, $route) {
@@ -42,7 +41,8 @@ $router->onHttpError(function ($code, $route) {
                     HTML;
     }
 
-    $route->response()->body($body);
+    $route->response()
+        ->body($body);
 });
 
 $router->dispatch();
