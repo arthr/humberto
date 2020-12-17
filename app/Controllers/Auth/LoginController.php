@@ -22,11 +22,11 @@ class LoginController extends Controller
             ->where('password', $password)
             ->get();
 
-        // TODO : Finalizar Login
+        // TO DO : Finalizar Login
     }
 
     public function logout()
     {
-        // TODO : Finalizar Logout
+        // TO DO : Finalizar Logout
     }
 }
