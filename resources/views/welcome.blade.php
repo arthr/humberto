@@ -89,15 +89,6 @@
 
             <div class="execution-time">
                 <p>executado em <b>{{ $executionTime }}</b> segundos</p>
-                @if($production)
-                <p>
-                    <font style="color: red; font-weight: bold;">Production</font>
-                </p>
-                @else
-                <p>
-                    <font style="color: blue; font-weight: bold;">Development</font>
-                </p>
-                @endif
             </div>
         </div>
     </div>

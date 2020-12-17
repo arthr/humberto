@@ -9,8 +9,7 @@ class IndexController
     public function index()
     {
         return view('welcome', [
-            'executionTime' => number_format((microtime(true) - APP_START), 5),
-            'production' => rand(0, 1)
+            'executionTime' => number_format((microtime(true) - APP_START), 5)
         ]);
     }
 
