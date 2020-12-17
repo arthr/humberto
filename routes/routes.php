@@ -1,6 +1,7 @@
 <?php
 
-use App\Controller\IndexController;
+use App\Controllers\Auth\LoginController;
+use App\Controllers\IndexController;
 use Klein\Klein as Router;
 
 $router = new Router();
@@ -9,9 +10,19 @@ $router->respond('GET', '/', function () {
     return (new IndexController)->index();
 });
 
+$router->with('/auth', function () use ($router) {
+    $router->respond('GET', '/login', function () {
+        (new LoginController)->showLoginForm();
+    });
+    $router->responde('POST', '/')
+});
+
 $router->respond('GET', '/usuario/[:id]?', function ($request, $response) {
     return $response->json((new IndexController)->usuario($request->id));
 });
+
+
+
 
 /** Tratamento de Erros */
 $router->onHttpError(function ($code, $route) {
